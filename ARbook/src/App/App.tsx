@@ -34,7 +34,7 @@ type SectionProps = PropsWithChildren<{
 function App(): JSX.Element {
   const isDarkMode = Appearance.getColorScheme() === 'dark';
   
-  const [ActivePage, setActivePage] = useState(<SearchPage isDarkMode={Appearance.getColorScheme() === 'dark'}></SearchPage>);
+  const [ActivePage, setActivePage] = useState(<SearchPage pageSwitchF={(newPage)=>{setActivePage(newPage)}} isDarkMode={Appearance.getColorScheme() === 'dark'}></SearchPage>);
   
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,

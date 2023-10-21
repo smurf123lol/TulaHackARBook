@@ -1,0 +1,6 @@
+@VirtualBook_HostAddress = http://localhost:5216
+
+GET {{VirtualBook_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

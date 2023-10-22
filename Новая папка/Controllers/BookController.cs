@@ -26,36 +26,40 @@ namespace VirtualBook.Controllers
         public async Task<ActionResult<List<Book>>> GetBookByAuthor(string author)
         {
             DBConnect db = new();
-            List<Book> books = db.Books.Where(book => EF.Functions.Like(book.Author, $"%{author}%")).ToList();
+            List<Book> books = db.Books.Where(book => 
+                EF.Functions.Like(book.Author.FirtstName, $"%{author}%") ||
+                EF.Functions.Like(book.Author.LastName, $"%{author}%")   ||
+                EF.Functions.Like(book.Author.MiddleName, $"%{author}%")
+            ).ToList();
 
             if (books.Count == 0)
                 this.HttpContext.Response.StatusCode = 404;
 
             return books;
         }
-        [Route("GetTitlesByBookName")]
+        [Route("GetTitlesByBookId")]
         [HttpGet]
-        public async Task<ActionResult<List<BookTitles>>> GetTitlesByBookName(string BookName)
+        public async Task<ActionResult<List<BookTytle>>> GetTitlesByBookId(int BookId)
         {
             DBConnect db = new();
-            List<BookTitles> tytles = db.BookTytles.Where(tytle => tytle.Book.Name == BookName).ToList();
+            List<BookTytle> tytles = db.BookTytles.Where(tytle => tytle.Book.Id == BookId).ToList();
 
             if (tytles.Count == 0)
                 this.HttpContext.Response.StatusCode = 404;
 
             return tytles;
         }
-        [Route("GetTitlesByBookId")]
+        [Route("GetEntity")]
         [HttpGet]
-        public async Task<ActionResult<List<BookTitles>>> GetTitlesByBookId(int BookId)
+        public async Task<ActionResult<List<ARObject>>> GetEntity(int BookId, int TytleId, string partName)
         {
             DBConnect db = new();
-            List<BookTitles> tytles = db.BookTytles.Where(tytle => tytle.Book.Id == BookId).ToList();
+            List<ARObject> objects = db.ARObjects.Where(obj => obj.Book.Id == BookId && obj.BookTytle.Id == TytleId && EF.Functions.Like(obj.Name, $"%{partName}%")).ToList();
 
-            if (tytles.Count == 0)
+            if (objects.Count == 0)
                 this.HttpContext.Response.StatusCode = 404;
 
-            return tytles;
+            return objects;
         }
     }
 }

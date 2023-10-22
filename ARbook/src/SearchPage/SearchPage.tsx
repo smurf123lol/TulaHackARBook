@@ -22,8 +22,10 @@ export const SearchPage = forwardRef((props:SearchPageProps,ref)=>{
     useImperativeHandle(props.cref, () => ({
         toggle(){
             setpStyle({...pstyle,display:pstyle.display=="none"?"block":"none"})
+            console.log(pstyle.display)
         }
     }))
+
     const [pstyle,setpStyle] = useState({
         backgroundColor:props.isDarkMode ? "dark":Colors.lighter,
         padding: 15,

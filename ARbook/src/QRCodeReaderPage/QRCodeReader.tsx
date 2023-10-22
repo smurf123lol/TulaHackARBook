@@ -23,7 +23,7 @@ export const QRCodeReaderPage = forwardRef((props,ref)=>{
     const codeScanner = useCodeScanner({
         codeTypes: ['qr', 'ean-13'],
         onCodeScanned: (codes) => {
-            console.log(codes.length);
+            props.pageSwitchF("ARPage")
           codes.forEach(code => {
             console.log(code);
           });

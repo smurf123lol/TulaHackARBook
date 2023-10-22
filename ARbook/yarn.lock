@@ -5494,6 +5494,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
+"react-native-ar-viewer@^0.1.17":
+  "integrity" "sha512-6lyH++wS8RbG6TN/6mALVClx1T/IGpR9bKFRIxwgd5yWkBEOrK8cwEz88OlTlAGc3mi7TQnM9cGoNV9YCASzOw=="
+  "resolved" "https://registry.npmjs.org/react-native-ar-viewer/-/react-native-ar-viewer-0.1.17.tgz"
+  "version" "0.1.17"
+
 "react-native-vector-icons@^10.0.0":
   "integrity" "sha512-efMOVbZIebY8RszZPzPBoXi9pvD/NFYmjIDYxRoc9LYSzV8rMJtT8FfcO2hPu85Rn2x9xktha0+qn0B7EqMAcQ=="
   "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-10.0.0.tgz"

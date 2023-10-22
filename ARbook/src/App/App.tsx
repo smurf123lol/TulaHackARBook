@@ -11,22 +11,13 @@ import { SearchPage} from '../SearchPage/SearchPage';
 import {
   Appearance,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
 } from 'react-native';
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { QRCodeReaderPage } from '../QRCodeReaderPage/QRCodeReader';
+import { ARViewPage } from '../ARViewPage/ARViewPage';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -36,13 +27,14 @@ function App(): JSX.Element {
   const isDarkMode = Appearance.getColorScheme() === 'dark';
   const refs = useRef({QRPage:React.createRef(),
                        SearchPage: React.createRef(),
-                       BookPage: React.createRef()})
+                       ARPage: React.createRef()})
   const [ActivePage, setActivePage] = useState("SearchPage");
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
   function switchPageTo(pName: string){
     console.log(refs)
+    if(ActivePage == pName)return
     refs.current[pName].current.toggle();
     refs.current[ActivePage].current.toggle();
     setActivePage(pName)
@@ -50,7 +42,8 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={backgroundStyle}>
       <SearchPage isDarkMode={isDarkMode} pageSwitchF={(name)=>switchPageTo(name)} cref={refs.current.SearchPage}></SearchPage>
-      <QRCodeReaderPage isDarkMode={isDarkMode} cref={refs.current.QRPage}></QRCodeReaderPage>
+      <QRCodeReaderPage isDarkMode={isDarkMode} cref={refs.current.QRPage} pageSwitchF={(name)=>switchPageTo(name)}></QRCodeReaderPage>
+      <ARViewPage pageSwitchF={(name)=>switchPageTo(name)} cref={refs.current.ARPage}></ARViewPage>
     </SafeAreaView>
   );
 }

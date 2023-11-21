@@ -11,5 +11,6 @@ namespace VirtualBook.Entity
         public Book Book { get; set; }
         public int No { get; set; }
         public int Name { get; set; }
+        public BookTytle() { }
     }
 }

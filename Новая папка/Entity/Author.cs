@@ -5,11 +5,15 @@ namespace VirtualBook.Entity
 {
     [PrimaryKey("Id")]
     [Table("Authors")]
-    public class Author(string firtstName, string lastName, string middleName)
+    public class Author
     {     
         public int Id { get; set; }
-        public string FirtstName { get; set; } = firtstName;
-        public string LastName { get; set; } = lastName;
-        public string MiddleName { get; set; } = middleName;
+        public string FirstName { get; set; } 
+        public string LastName { get; set; } 
+        public string MiddleName { get; set; } 
+        public Author()
+        {
+
+        }
     }
 }

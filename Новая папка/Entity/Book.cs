@@ -5,12 +5,17 @@ namespace VirtualBook.Entity
 {
     [PrimaryKey("Id")]
     [Table("Books")]
-    public class Book(string name, Author author, string description = "unknow", string imageURL = "http://localhost:5216/Book/Storage/placeHolder.png")
+    public class Book
     {
         public int Id { get; set; }
-        public string Name { get; set; } = name;
-        public Author Author { get; set; } = author;
-        public string Description { get; set; } = description;
-        public string ImageURL { get; set; } = imageURL;
+        public string Name { get; set; }
+        public int AuthorId { get; set; }
+        public Author Author { get; set; } 
+        public string Description { get; set; } 
+        public string ImageURL { get; set; } 
+        public Book()
+        {
+
+        }
     }
 }

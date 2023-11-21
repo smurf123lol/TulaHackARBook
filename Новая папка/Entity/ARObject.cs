@@ -13,5 +13,9 @@ namespace VirtualBook.Entity
         public string Name{ get; set; }
         public string Description { get; set; }
         public string ARObjectURL { get; set; }
+        public ARObject()
+        {
+
+        }
     }
 }

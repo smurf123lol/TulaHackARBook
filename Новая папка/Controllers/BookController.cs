@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VirtualBook.Entity;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace VirtualBook.Controllers
 {
@@ -46,6 +47,11 @@ namespace VirtualBook.Controllers
 
             if (tytles.Count == 0)
                 this.HttpContext.Response.StatusCode = 404;
+
+            foreach (var tytle in tytles)
+            {
+                db.Entry(tytle).Reference(ty => ty.Book).Load();                
+            }
 
             return tytles;
         }

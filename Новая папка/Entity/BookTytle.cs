@@ -8,6 +8,7 @@ namespace VirtualBook.Entity
     public class BookTytle
     {
         public int Id { get; set; }
+        public int BookId { get; set; }
         public Book Book { get; set; }
         public int No { get; set; }
         public int Name { get; set; }

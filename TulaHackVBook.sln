@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveLinesClient", "LiveLinesClient\LiveLinesClient.csproj", "{3B30927D-1F52-4C25-B2BC-E0EAB115E006}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualBook", "Server\VirtualBook.csproj", "{2B3E1B67-2169-49A4-B01F-5C2C3B2B33C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B30927D-1F52-4C25-B2BC-E0EAB115E006}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2B3E1B67-2169-49A4-B01F-5C2C3B2B33C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3E1B67-2169-49A4-B01F-5C2C3B2B33C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3E1B67-2169-49A4-B01F-5C2C3B2B33C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3E1B67-2169-49A4-B01F-5C2C3B2B33C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72A33073-D804-4609-B8C0-9B76E7B0B672}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+﻿div {
+    background-color:lightgray;
+    border-radius:10px;
+    width: min(45vw,38.67vh);
+    height: min(63.64vw,54.69vh);
+    display: grid;
+    justify-items: center;
+    overflow: hidden;
+}

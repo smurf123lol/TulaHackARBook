@@ -1,0 +1,68 @@
+﻿@page "/search"
+@using LLClient.Components.Layout
+@using LLClient.Components.UI
+@using static System.Runtime.InteropServices.JavaScript.JSType
+<div>
+    <form @onsubmit="doSearch">
+        <input @bind-value=searchText  />
+    </form>
+</div>
+<div class="flex-container">
+    <div class="book-card-container">
+        @foreach(var frag in Cards)
+        {
+            @frag
+        }
+    </div>
+</div>
+@code {
+    List<RenderFragment> Cards = new List<RenderFragment>();
+
+    class BookCardData : ComponentBase
+    { 
+        private string _image = "";
+        private string _name = "";
+        private uint _id;
+
+        public string Image {
+            get { return _image; } 
+            set { _image = value; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public uint Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        public BookCardData(uint id, string name, string image ="")
+        {
+            Id = id;
+            Name = name;
+            Image = image;
+        }
+        public RenderFragment getFragment()
+        {
+            return Image != "" ?
+                @<BookCard Id="@Id" Image="@Image" Name="@Name"/>             :
+                @<BookCard Id="@Id" Name="@Name"/>;
+            /*builder.OpenComponent<BookCard>(0);
+            builder.AddAttribute(1, "Id", Id);
+            builder.AddAttribute(2, "Name", Name);
+            builder.AddAttribute(3, "Image", Image);
+            builder.CloseComponent();*/
+        }
+    }
+    private string searchText = "";
+    private string searchResult = "";
+    public void doSearch()
+    {
+        BookCardData bookCard = new BookCardData(1, searchText);
+        Cards.Add(bookCard.getFragment());
+    }
+}

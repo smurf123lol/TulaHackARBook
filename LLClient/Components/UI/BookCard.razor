@@ -1,0 +1,12 @@
+﻿<div>
+	<img src="@Image" style="width:200px;height:200px;background-color:aquamarine">
+	<span>@Name</span>
+</div>
+@code {
+	[Parameter]
+	public uint Id { get; set; }
+	[Parameter]
+	public string Name { get; set; } = "No name";
+	[Parameter]
+	public string Image { get; set; } = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRviOEckGUhMhytI3wNlRa5hEUXwBDhSE1o1KhmeTaA&s";
+}

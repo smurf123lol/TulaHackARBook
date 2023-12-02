@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             x:Class="LiveLinesClient.Components.UI.BookCard">
+    <ContentView.Content>
+        <Frame BindingContext="{x:Reference this}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped"/>
+            </Frame.GestureRecognizers>
+            <VerticalStackLayout>
+                
+                <Image Source="{Binding ImageSource}" 
+                           WidthRequest="100"
+                           HeightRequest="100"></Image>
+                <Label Text="{Binding BookName}"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

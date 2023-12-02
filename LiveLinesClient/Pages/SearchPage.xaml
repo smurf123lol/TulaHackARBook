@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiveLinesClient.Pages.SearchPage"
+             xmlns:layouts="clr-namespace:LiveLinesClient.Components.Layouts"
+             xmlns:ui="clr-namespace:LiveLinesClient.Components.UI">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <ui:BookCard ImageSource="dotnet_bot.png" BookName="Kappa" />
+            <ui:BookCard ImageSource="dotnet_bot.png" BookName="Kappa"/>
+            <ui:BookCard ImageSource="dotnet_bot.png" BookName="Kappa"/>
+            <layouts:MainLayout/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
